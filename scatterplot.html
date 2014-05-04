@@ -85,7 +85,12 @@
              .attr("r", function(d) {
                return rScale(d[1]);
              })
-             .attr("fill", "red");
+             .attr("fill", function() {
+               var colors = ['#ff0000', '#00ff00', '#0000ff', '#8a2b32', '#a52a2a',
+               '#ff7f50', '#00ffff', '#2f4f4f', '#ff00ff', '#ffd700'];
+               var random_color = colors[Math.floor(Math.random() * colors.length)];
+               return random_color;
+             });
 
           // labels
           /*
